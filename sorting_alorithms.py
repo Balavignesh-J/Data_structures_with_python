@@ -33,6 +33,38 @@ def insertion(arr):
 
         arr[j+1]=cur
 
+def merge(arr):
+    if len(arr)>1:
+        m=len(arr)//2
+        left=arr[:m]
+        right=arr[m:]
+
+        merge(left)
+        merge(right)
+
+        lp=0
+        rp=0
+        ap=0
+
+        while lp<len(left) and rp<len(right):
+            if left[lp]<right[rp]:
+                arr[ap]=left[lp]
+                lp+=1
+            else:
+                arr[ap]=right[rp]
+                rp+=1
+            ap+=1
+
+        while lp<len(left):
+            arr[ap]=left[lp]
+            lp+=1
+            ap+=1
+
+        while rp<len(right):
+            arr[ap]=right[rp]
+            rp+=1
+            ap+=1
+
 arr=[5,1,4,2,3]
-insertion(arr)
+merge(arr)
 print(arr)

@@ -89,5 +89,5 @@ def pivotpos(arr,left,right):
     return i
 
 arr=[5,1,4,2,3,6,8,7,9]
-quick(arr,0,len(arr)-1)
+insertion(arr)
 print(arr)

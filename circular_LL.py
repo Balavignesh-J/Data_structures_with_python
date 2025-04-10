@@ -29,31 +29,47 @@ class Cll:
                 break
 
     def insert(self, data, pos):
-        new = Node(data)
-        cur = self.head
-        if self.head.data == pos:
-            new.next = self.head.next
-            self.head.next = new
-            return
-        while True:
-            if cur == self.head:
-                cur = cur.next
-            elif cur.next != self.head:
-                if cur.data == pos:
-                    new.next = cur.next
-                    cur.next = new
-                    break
-                cur = cur.next
-            else:
-                break
 
-        if cur.next == self.head and cur.data == pos:
+        if self.head==None:
+            print("List is empty")
+            return
+
+        new=Node(data)
+        cur=self.head
+        flag=False
+        while cur.next!=self.head:
+            if cur.data==pos:
+                new.next=cur.next
+                cur.next=new
+                flag=True
+                break
+            else:
+                cur=cur.next
+
+        if not flag and cur.data==pos:
             new.next = cur.next
             cur.next = new
+
+    def delete(self,data):
+        cur = self.head
+        flag = False
+        while cur.next != self.head and cur.next.data!=data:
+            cur=cur.next
+
+
+        if cur.next.data==data:
+            cur.next=cur.next.next
+            flag=True
+
+        if flag:
+            print("Deletion sucess")
+        else:
+            print("Element not present")
 
 
 cll = Cll()
 cll.create(5)
 cll.create(6)
-cll.insert(7, 4)
+cll.insert(7, 6)
+cll.delete(5)
 cll.display()

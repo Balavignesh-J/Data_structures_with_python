@@ -1,6 +1,3 @@
-from sys import int_info
-
-
 class Node:
     def __init__(self,data):
         self.data=data

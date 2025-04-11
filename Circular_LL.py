@@ -75,10 +75,24 @@ class Cll:
 
 
 cll = Cll()
-cll.create(5)
-cll.create(6)
-cll.insert(7, 6)
-cll.insert(8, 7)
-cll.insert(9, 8)
-cll.delete(5)
-cll.display()
+
+print("Circular Linked List Operations")
+print("Menu")
+
+while True:
+    print("1.Add \n2.Insert \n3.Delete \n4.Display")
+    n=int(input("Enter your choice: "))
+    if n==1:
+        n=int(input("enter the value:"))
+        cll.create(n)
+    elif n==2:
+        pos=int(input("Enter the value after to insert: "))
+        value=int(input("Enter the value to insert: "))
+        cll.insert(value,pos)
+    elif n==3:
+        value=int(input("Enter the node to delete: "))
+        cll.delete(value)
+    elif n==4:
+        cll.display()
+    else:
+        break

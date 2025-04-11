@@ -52,6 +52,13 @@ class Cll:
 
     def delete(self,data):
         cur = self.head
+        if self.head.data==data:
+            while cur.next!=self.head:
+                cur=cur.next
+            cur.next=self.head.next
+            self.head=self.head.next
+            print("Deletion success")
+            return
         flag = False
         while cur.next != self.head and cur.next.data!=data:
             cur=cur.next
@@ -62,7 +69,7 @@ class Cll:
             flag=True
 
         if flag:
-            print("Deletion sucess")
+            print("Deletion success")
         else:
             print("Element not present")
 
@@ -71,5 +78,7 @@ cll = Cll()
 cll.create(5)
 cll.create(6)
 cll.insert(7, 6)
+cll.insert(8, 7)
+cll.insert(9, 8)
 cll.delete(5)
 cll.display()

@@ -63,9 +63,9 @@ class LinkedList:
 ll=LinkedList()
 print("Linked List Operations")
 print("Menu")
-print("1.Add \n2.Insert \n3.Delete \n4.Display")
 
 while True:
+    print("1.Add \n2.Insert \n3.Delete \n4.Display")
     n=int(input("Enter your choice: "))
     if n==1:
         n=int(input("enter the value:"))

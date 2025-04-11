@@ -28,7 +28,7 @@ class Cll:
             if cur == self.head:
                 break
 
-    def insert(self, data, pos):
+    def insert(self, pos ,data):
 
         if self.head==None:
             print("List is empty")
@@ -88,7 +88,7 @@ while True:
     elif n==2:
         pos=int(input("Enter the value after to insert: "))
         value=int(input("Enter the value to insert: "))
-        cll.insert(value,pos)
+        cll.insert(pos,value)
     elif n==3:
         value=int(input("Enter the node to delete: "))
         cll.delete(value)

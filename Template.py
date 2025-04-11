@@ -1,6 +1,6 @@
-def template(cls):
+def template(cls,name):
     ll = cls()
-    print("Double Linked List Operations")
+    print(f"{name} Operations")
     print("Menu")
 
     while True:

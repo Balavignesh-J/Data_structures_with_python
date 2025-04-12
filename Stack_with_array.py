@@ -6,7 +6,7 @@ class S:
         self.top=-1
 
     def isempty(self):
-        if self.top!=-1:
+        if self.top==-1:
             return True
         else:
             return False
@@ -17,7 +17,7 @@ class S:
         print("Push success")
 
     def pop(self):
-        if self.isempty():
+        if not self.isempty():
             n=self.stack.pop()
             self.top-=1
             print(f"The deleted element is {n}")
@@ -25,14 +25,14 @@ class S:
             print("stack is empty")
 
     def peek(self):
-        if self.isempty():
+        if not self.isempty():
             n=self.stack[self.top]
             print(f"The Top element is {n}")
         else:
             print("stack is empty")
 
     def display(self):
-        if self.isempty():
+        if not self.isempty():
             for i in range(self.top,-1,-1):
                 print(f"{i+1} element is {self.stack[i]}")
         else:

@@ -40,3 +40,24 @@ def stack_template(cls,name):
             s.display()
         else:
             break
+
+
+def queue_template(cls,name):
+    s=cls()
+    print(f"Queue operations with {name}")
+    print("Menu")
+
+    while True:
+        print("1.Enque \n2.Deque \n3.Peek \n4.Display")
+        n = int(input("Enter your choice: "))
+        if n == 1:
+            n = int(input("enter the value:"))
+            s.enque(n)
+        elif n == 2:
+            s.deque()
+        elif n == 3:
+            s.peek()
+        elif n == 4:
+            s.display()
+        else:
+            break

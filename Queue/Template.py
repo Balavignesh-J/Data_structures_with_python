@@ -20,7 +20,7 @@ def queue_template(cls,name):
 
 def dequeue_template(cls,name):
     q=cls()
-    print(f"Queue operations with {name}")
+    print(f"Dequeue operations with {name}")
     print("Menu")
     
     print("1.Enque_front \n2.Deque_front \n3.Enque_rear \n4.Deque_rear \n5.Display")

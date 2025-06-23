@@ -35,7 +35,31 @@ class Tree:
         print(" "*depth,node.data)
         for child in node.children:
             self.display(child,depth+1)
+    def remove(self,data):
+        if not self.root:
+            print("Tree is empty")
+            return
+        if self.root.data==data:
+            self.root=None
+            return
+        n=self.findnodeitself(data,self.root)
+        if n:
+            for child in n.children:
+                if child.data==data:
+                    n.children.remove(child)
+                    return
+        print("node not found")
 
+
+    def findnodeitself(self,data,node):
+        for child in node.children:
+            if child.data==data:
+                return node
+            n=self.findnodeitself(data,child)
+            if n:
+                return n
+
+        return None
 
 
 t=Tree()
@@ -47,4 +71,6 @@ t.addnode(5,2)
 t.addnode(6,2)
 t.addnode(7,3)
 t.addnode(8,4)
+t.display()
+t.remove(3)
 t.display()

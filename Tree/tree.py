@@ -42,7 +42,7 @@ class Tree:
         if self.root.data==data:
             self.root=None
             return
-        n=self.findnodeitself(data,self.root)
+        n=self.findparent(data,self.root)
         if n:
             for child in n.children:
                 if child.data==data:
@@ -51,11 +51,11 @@ class Tree:
         print("node not found")
 
 
-    def findnodeitself(self,data,node):
+    def findparent(self,data,node):
         for child in node.children:
             if child.data==data:
                 return node
-            n=self.findnodeitself(data,child)
+            n=self.findparent(data,child)
             if n:
                 return n
 

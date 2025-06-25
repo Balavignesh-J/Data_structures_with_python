@@ -72,26 +72,26 @@ class BinarysearchTree:
             self.postorder(node.right,res)
             res.append(node.data)
 
-    def remove(self,data):
-        if not self.root:
-            print("Tree is empty")
-            return
-        if self.root.data==data:
-            self.root=None
-            return
-        self.recursiveremove(data,self.root)
-
-    def recursiveremove(self,data,node):
-        if node.left and node.left.data==data:
-            node.left=None
-            return
-        elif node.right and node.right.data==data:
-            node.right=None
-            return
-        elif data<node.data:
-            self.recursiveremove(data,node.left)
-        elif data>=node.data:
-            self.recursiveremove(data,node.right)
+ 
+     def remove(self, root=self.root, key):
+        if not root:
+            return root
+        if key > root.val:
+            root.right = self.deleteNode(root.right, key)
+        elif key < root.val:
+            root.left = self.deleteNode(root.left, key)
+        else:
+            if not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+            # find the min from right subtree
+            cur = root.right
+            while cur.left:
+                cur = cur.left
+            root.val = cur.val
+            root.right = self.deleteNode(root.right, root.val)
+        return root
 
     def search(self,data):
         nodefound=self.findnode(data,self.root)
@@ -117,7 +117,7 @@ binarysearchTree.add(4)
 binarysearchTree.display()
 print("\n")
 binarysearchTree.traversal_display()
-binarysearchTree.remove(4)
+binarysearchTree.remove(key=4)
 binarysearchTree.display()
 print("\n")
 binarysearchTree.search(3)

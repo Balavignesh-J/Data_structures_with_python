@@ -59,6 +59,7 @@ class Graph:
                 if c not in alreadyvisited:
                     q.append(c)
                     alreadyvisited.add(c)
+
     def shortest_path(self,v1,v2):
         alreadyvisited = {v1}
         q = [(v1,[v1])]

@@ -49,7 +49,6 @@ class Graph:
                 self.DFS(c,alreadyvisited)
 
     def BFS(self,start):
-        print("\n")
         alreadyvisited={start}
         q=[start]
         while len(q)>0:
@@ -90,5 +89,7 @@ graphl.GetVertices()
 graphl.GetEdges()
 graphl.Display()
 graphl.DFS("A")
+print("\n")
 graphl.BFS("A")
+print("\n")
 graphl.shortest_path("A","H")

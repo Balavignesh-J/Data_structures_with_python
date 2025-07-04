@@ -61,6 +61,22 @@ class Tree:
 
         return None
 
+    def bfs(self):
+        q=[self.root]
+        while len(q)>0:
+            v=q.pop(0)
+            print(v.data,end=' ')
+            for child in v.children:
+                q.append(child)
+        print()
+
+    def dfs(self,node=None):
+        if not node:
+            node=self.root
+        print(node.data,end=' ')
+        for child in node.children:
+            self.dfs(child)
+
 
 t=Tree()
 t.addnode(1)
@@ -74,3 +90,5 @@ t.addnode(8,4)
 t.display()
 t.remove(3)
 t.display()
+t.bfs()
+t.dfs()

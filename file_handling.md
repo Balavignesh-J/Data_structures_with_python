@@ -1,4 +1,3 @@
-```markdown
 # 📂 File Handling in Python
 
 ## ✅ 1️⃣ What is file handling?
@@ -199,4 +198,3 @@ except FileNotFoundError:
 ⭐ `write()`, `writelines()` — for writing  
 ⭐ `with` statement — best practice for auto-close  
 ⭐ `os` module — for checking, deleting files
-```

@@ -26,9 +26,9 @@ When you open a file, you specify the *mode*:
 
 ## ✅ 3️⃣ Opening a file
 
-\`\`\`python
+```python
 f = open('example.txt', 'r')
-\`\`\`
+```
 
 - `'example.txt'` is the file name.
 - `'r'` is the mode.

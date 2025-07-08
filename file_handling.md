@@ -154,7 +154,7 @@ else:
 
 ---
 
-## ✅ 10️⃣ Deleting a file
+## ✅ 1️⃣0️⃣ Deleting a file
 
 ```python
 import os
@@ -164,7 +164,7 @@ os.remove('example.txt')
 
 ---
 
-## ✅ 11️⃣ Example: Copying a file
+## ✅ 1️⃣1️⃣ Example: Copying a file
 
 ```python
 with open('source.txt', 'r') as src:
@@ -176,7 +176,7 @@ with open('destination.txt', 'w') as dst:
 
 ---
 
-## ✅ 12️⃣ Exception handling
+## ✅ 1️⃣2️⃣ Exception handling
 
 Always handle errors for safer code:
 

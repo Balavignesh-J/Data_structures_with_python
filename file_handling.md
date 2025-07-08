@@ -40,36 +40,36 @@ f = open('example.txt', 'r')
 ### 4.1 `read()`
 Reads the entire contents:
 
-\`\`\`python
+```python
 f = open('example.txt', 'r')
 content = f.read()
 print(content)
 f.close()
-\`\`\`
+```
 
 ---
 
 ### 4.2 `readline()`
 Reads one line at a time:
 
-\`\`\`python
+```python
 f = open('example.txt', 'r')
 line = f.readline()
 print(line)
 f.close()
-\`\`\`
+```
 
 ---
 
 ### 4.3 `readlines()`
 Reads all lines into a list:
 
-\`\`\`python
+```python
 f = open('example.txt', 'r')
 lines = f.readlines()
 print(lines)
 f.close()
-\`\`\`
+```
 
 ---
 
@@ -77,11 +77,11 @@ f.close()
 
 ### 5.1 Overwrite (`w` mode)
 
-\`\`\`python
+```python
 f = open('example.txt', 'w')
 f.write("Hello, world!")
 f.close()
-\`\`\`
+```
 
 This will **overwrite** existing content.
 
@@ -89,11 +89,11 @@ This will **overwrite** existing content.
 
 ### 5.2 Append (`a` mode)
 
-\`\`\`python
+```python
 f = open('example.txt', 'a')
 f.write("\\nThis is a new line.")
 f.close()
-\`\`\`
+```
 
 This **adds** to the end of the file.
 
@@ -103,11 +103,11 @@ This **adds** to the end of the file.
 
 Recommended way to handle files because it auto-closes the file:
 
-\`\`\`python
+```python
 with open('example.txt', 'r') as f:
     content = f.read()
     print(content)
-\`\`\`
+```
 
 No need to call `f.close()`.
 
@@ -115,7 +115,7 @@ No need to call `f.close()`.
 
 ## ✅ 7️⃣ Example: Writing and reading back
 
-\`\`\`python
+```python
 # Write
 with open('example.txt', 'w') as f:
     f.write("Line 1\\nLine 2\\nLine 3")
@@ -124,7 +124,7 @@ with open('example.txt', 'w') as f:
 with open('example.txt', 'r') as f:
     for line in f:
         print(line.strip())
-\`\`\`
+```
 
 ---
 
@@ -132,10 +132,10 @@ with open('example.txt', 'r') as f:
 
 For images, audio, etc.:
 
-\`\`\`python
+```python
 with open('image.jpg', 'rb') as f:
     data = f.read()
-\`\`\`
+```
 
 ---
 
@@ -143,36 +143,36 @@ with open('image.jpg', 'rb') as f:
 
 Using the `os` module:
 
-\`\`\`python
+```python
 import os
 
 if os.path.exists('example.txt'):
     print("File exists!")
 else:
     print("File not found!")
-\`\`\`
+```
 
 ---
 
 ## ✅ 10️⃣ Deleting a file
 
-\`\`\`python
+```python
 import os
 
 os.remove('example.txt')
-\`\`\`
+```
 
 ---
 
 ## ✅ 11️⃣ Example: Copying a file
 
-\`\`\`python
+```python
 with open('source.txt', 'r') as src:
     data = src.read()
 
 with open('destination.txt', 'w') as dst:
     dst.write(data)
-\`\`\`
+```
 
 ---
 
@@ -180,14 +180,14 @@ with open('destination.txt', 'w') as dst:
 
 Always handle errors for safer code:
 
-\`\`\`python
+```python
 try:
     with open('example.txt', 'r') as f:
         content = f.read()
         print(content)
 except FileNotFoundError:
     print("File not found!")
-\`\`\`
+```
 
 ---
 

@@ -23,11 +23,9 @@ class min_heap:
             self.heapify_up(node.right)
         else:
             if self.get_count(node.left) > self.get_count(node.right):
-                node.right=Node(n)
-                self.heapify_up(node.left)
+                self.recursiveadd(n,node.right)
             else:
-                node.left=Node(n)
-                self.heapify_up(node.right)
+                self.recursiveadd(n,node.left)
 
     def get_count(self,node):
         if not node:

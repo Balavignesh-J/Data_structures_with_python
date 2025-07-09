@@ -1,3 +1,5 @@
+from template import sorting_template
+
 def bubble(arr):
     n=len(arr)
     for i in range(n-1):
@@ -88,6 +90,5 @@ def pivotpos(arr,left,right):
 
     return i
 
-arr=[5,1,4,2,3,6,8,7,9]
-insertion(arr)
-print(arr)
+#arr=[5,1,4,2,3,6,8,7,9]
+sorting_template()

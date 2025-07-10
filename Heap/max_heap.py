@@ -6,7 +6,7 @@ class Node:
         self.left=None
         self.right=None
 
-class Min_Heap:
+class Max_Heap:
     def __init__(self):
         self.root=None
 
@@ -38,7 +38,7 @@ class Min_Heap:
     def heapify_up(self,node):
         while node and node!=self.root:
             parent=self.get_parent(node,self.root)
-            if parent.data > node.data:
+            if parent.data < node.data:
                 parent.data,node.data=node.data,parent.data
                 node=parent
             else:
@@ -59,7 +59,7 @@ class Min_Heap:
 
         return None
 
-    def extract_min(self):
+    def extract_max(self):
         if not self.root:
             print("Root is empty")
             return
@@ -96,15 +96,15 @@ class Min_Heap:
 
     def heapify_down(self,node):
         while node:
-            small=node
-            if node.left and node.left.data<small.data:
-                small=node.left
-            if node.right and node.right.data<small.data:
-                small=node.right
+            large=node
+            if node.left and node.left.data>large.data:
+                large=node.left
+            if node.right and node.right.data>large.data:
+                large=node.right
 
-            if small!=node:
-                small.data,node.data=node.data,small.data
-                small=node
+            if large!=node:
+                large.data,node.data=node.data,large.data
+                large=node
             else:
                 break
 
@@ -122,4 +122,4 @@ class Min_Heap:
                 q.append(n.right)
         print()
 
-min_heap_template(Min_Heap,'Min')
+min_heap_template(Max_Heap,'Max')

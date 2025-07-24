@@ -96,3 +96,70 @@
 - `SHOW STATUS;` - Show server status
 - `SET GLOBAL variable=value;` - Change global variable
 - `SET SESSION variable=value;` - Change session variable
+
+
+# MySQL Data Types
+
+## Numeric Data Types
+
+### Integer Types
+- `TINYINT` - 1 byte (-128 to 127) or (0 to 255) unsigned
+- `SMALLINT` - 2 bytes (-32,768 to 32,767) or (0 to 65,535) unsigned
+- `MEDIUMINT` - 3 bytes (-8,388,608 to 8,388,607) or (0 to 16,777,215) unsigned
+- `INT` or `INTEGER` - 4 bytes (-2,147,483,648 to 2,147,483,647) or (0 to 4,294,967,295) unsigned
+- `BIGINT` - 8 bytes (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807) or (0 to 18,446,744,073,709,551,615) unsigned
+- `BIT(M)` - Bit-field type (M bits, 1-64)
+
+### Fixed-Point Types
+- `DECIMAL(M,D)` or `DEC(M,D)` - Exact fixed-point number (M=total digits, D=decimal places)
+- `NUMERIC(M,D)` - Synonym for DECIMAL
+
+### Floating-Point Types
+- `FLOAT(M,D)` - Single-precision floating-point (approximate)
+- `FLOAT(p)` - Floating-point (p=precision bits)
+- `DOUBLE(M,D)` or `DOUBLE PRECISION(M,D)` - Double-precision floating-point
+- `REAL(M,D)` - Synonym for DOUBLE (unless REAL_AS_FLOAT SQL mode enabled)
+
+## Date and Time Types
+- `DATE` - Date (YYYY-MM-DD)
+- `TIME` - Time (HH:MM:SS)
+- `DATETIME` - Date and time (YYYY-MM-DD HH:MM:SS)
+- `TIMESTAMP` - Timestamp (YYYY-MM-DD HH:MM:SS, range 1970-2038, timezone-aware)
+- `YEAR` - Year (4-digit or 2-digit format)
+
+## String Types
+
+### Character Strings
+- `CHAR(M)` - Fixed-length string (0-255 chars)
+- `VARCHAR(M)` - Variable-length string (0-65,535 chars)
+- `BINARY(M)` - Fixed-length binary string
+- `VARBINARY(M)` - Variable-length binary string
+
+### Text Types
+- `TINYTEXT` - String up to 255 characters
+- `TEXT` - String up to 65,535 characters
+- `MEDIUMTEXT` - String up to 16,777,215 characters
+- `LONGTEXT` - String up to 4,294,967,295 characters
+
+### Blob Types (Binary Large Objects)
+- `TINYBLOB` - Binary data up to 255 bytes
+- `BLOB` - Binary data up to 65,535 bytes
+- `MEDIUMBLOB` - Binary data up to 16,777,215 bytes
+- `LONGBLOB` - Binary data up to 4,294,967,295 bytes
+
+## JSON Type
+- `JSON` - JSON-formatted data (introduced in MySQL 5.7.8)
+
+## Spatial Data Types
+- `GEOMETRY` - Any spatial type
+- `POINT` - A point in space
+- `LINESTRING` - Curve with linear interpolation between points
+- `POLYGON` - Polygon
+- `MULTIPOINT` - Collection of points
+- `MULTILINESTRING` - Collection of linestrings
+- `MULTIPOLYGON` - Collection of polygons
+- `GEOMETRYCOLLECTION` - Collection of geometries
+
+## Enumeration and Set Types
+- `ENUM('val1','val2',...)` - String object with single value from predefined list
+- `SET('val1','val2',...)` - String object with zero or more values from predefined list
